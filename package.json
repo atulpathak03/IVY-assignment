@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "tsc",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fetch-data": "node scripts/fetch_dataset.js",
+    "analyze-data": "node scripts/analyze_data.js",
+    "generate-submission": "node scripts/generate_submission.js",
+    "investigate-api": "node scripts/investigate_api.js"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",

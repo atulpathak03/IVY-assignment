@@ -370,7 +370,7 @@
       "documented": "price_min and price_max are in Indian rupees (integer).",
       "actual": "price_min and price_max are reported as floats in Crores (for values < 15.0) or Lakhs (for values >= 15.0), rather than integer Rupees.",
       "how_found": "Inspected project objects, e.g. P40224 reports price_max: 3.78 (3.78 Cr = 37,800,000 INR).",
-      "impact": "Displaying project prices without unit conversion displays \u20b93.78 instead of \u20b93.78 Cr.",
+      "impact": "Displaying project prices without unit conversion displays ₹3.78 instead of ₹3.78 Cr.",
       "evidence": [
         "P40224",
         "P40441",

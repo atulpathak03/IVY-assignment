@@ -22,7 +22,7 @@ The application prioritizes **empirical correctness** over superficial features,
 - **Frontend Core:** React 18, TypeScript, Vite
 - **Routing:** React Router v6
 - **Icons & UI:** Lucide React, Modern Glassmorphism Vanilla CSS Design System
-- **Data & API Engine:** Python 3, `urllib`, `dotenv`, JSON Line processing
+- **Data & API Engine:** Node.js (ES Modules), native `fetch`, `fs`, JSON processing
 - **State Management:** React Context API (`AuthContext`, `FavouritesContext`)
 
 ---
@@ -31,7 +31,6 @@ The application prioritizes **empirical correctness** over superficial features,
 
 ### Prerequisites
 - Node.js 18+ and npm
-- Python 3.9+
 
 ### Quick Start
 
@@ -64,9 +63,9 @@ The application prioritizes **empirical correctness** over superficial features,
 
 4. **Run Data Analysis & Generate `submission.json`:**
    ```bash
-   python scripts/investigate_api.py
-   python scripts/fetch_dataset.py
-   python scripts/generate_submission.py
+   npm run investigate-api
+   npm run fetch-data
+   npm run generate-submission
    ```
 
 5. **Start Development Server:**
@@ -269,7 +268,7 @@ npx vercel
 
 ## 13. LLM Usage Statement
 
-In accordance with the assignment guidelines, an LLM (Gemini 3.6 Flash / Antigravity Agent) was used as a pair programming assistant to write exploratory Python scripts, scaffold React components, format documentation findings, and refine CSS styles. All hypotheses, empirical API tests, data deduplications, and answer calculations were rigorously verified against live API responses.
+In accordance with the assignment guidelines, an LLM (Gemini 3.6 Flash / Antigravity Agent) was used as a pair programming assistant to write exploratory Node.js JavaScript scripts, scaffold React components, format documentation findings, and refine CSS styles. All hypotheses, empirical API tests, data deduplications, and answer calculations were rigorously verified against live API responses.
 
 ---
 
