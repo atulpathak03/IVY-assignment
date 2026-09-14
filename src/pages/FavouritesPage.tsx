@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useFavourites } from '../context/FavouritesContext';
-import { fetchListingsFromApi } from '../api/listings';
+import { fetchListingById } from '../api/listings';
 import { Listing } from '../types';
 import { ListingCard } from '../components/ListingCard';
 import { Heart, Loader2, Home } from 'lucide-react';
@@ -21,10 +21,11 @@ export const FavouritesPage: React.FC = () => {
           return;
         }
 
-        // Fetch listings batch to resolve saved IDs
-        const res = await fetchListingsFromApi(0, 200);
-        const matches = res.results.filter(l => savedIds.includes(l.listing_id));
-        setSavedListings(matches);
+        // Fetch each saved listing individually
+        const promises = savedIds.map(id => fetchListingById(id).catch(() => null));
+        const results = await Promise.all(promises);
+        const validListings = results.filter((l): l is Listing => l !== null);
+        setSavedListings(validListings);
       } catch (err) {
         console.error('Error loading favourites:', err);
       } finally {
